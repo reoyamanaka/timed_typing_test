@@ -83,7 +83,7 @@ git clone https://github.com/reoyamanaka/timed_typing_test.git
 <div align="center">
   <strong>YouTube Demo</strong><br>
   <a href="https://youtu.be/4vwbIp-kAJQ">
-    <img src="http://i3.ytimg.com/vi/4vwbIp-kAJQ/maxresdefault.jpg" alt="Thumbnail" width="560" height="315">
+    <img src="http://i3.ytimg.com/vi/4vwbIp-kAJQ/hqdefault.jpg" alt="Thumbnail" width="560" height="315">
   </a>
 </div>
 
