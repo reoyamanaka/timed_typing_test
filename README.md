@@ -41,17 +41,17 @@
 ## About The Project
 
 <p align="center">
-  <strong>Initial Prompt<strong>
+  <strong>Initial Prompt</strong>
   <img src="images/0.png">
 </p>
 
 <p align="center">
-  <strong>Excerpt to Type under Timed Conditions<strong>
+  <strong>Excerpt to Type under Timed Conditions</strong>
   <img src="images/1.png">
 </p>
 
 <p align="center">
-  <strong>Results<strong>
+  <strong>Results</strong>
   <img src="images/2.png">
 </p>
 
