@@ -1,9 +1,7 @@
-import time, random, csv, datetime, pandas
+import time, random, csv, datetime
 import matplotlib.pyplot as plt
 
-
-
-
+excerpt = random.randint(0, 2)
 
 if excerpt == 0:
     with open("excerpt0.txt", "r") as rf:
@@ -44,9 +42,8 @@ if score < 100:
     print(typos)
 print("Your typos-adjusted typing speed is " + "%0.2f" % (wordsPerMin - len(typos)) + " words per minute.")
 
-
+saveOption = input("Do you want to save your score? [Y / N]: ")
 while True:
-    saveOption = input("Do you want to save your score? [Y / N]: ")
     if saveOption == "y" or saveOption == "Y":
         currentDate = datetime.date.today()
         currentDate = currentDate.strftime("%d-%m-%Y")
@@ -56,8 +53,12 @@ while True:
             progress = {}
             for row in reader:
                 progress[row[0]] = {"raw_wpm":row[1], "accuracy":row[2], "wpm":row[3]}
-        print(progress)
         progress[currentDate] = {"raw_wpm":'%0.2f' % wordsPerMin, "accuracy":'%0.2f' % score, "wpm":'%0.2f' % (wordsPerMin - len(typos))}
+
+        with open("progress.csv", "w") as f:
+            for key in progress.keys():
+                f.write("{},{},{}".format(key, progress[key]["raw_wpm"], progress[key]["accuracy"], progress[key]["wpm"]))
+        print("Progress saved.")
         break
     elif saveOption == "n" or saveOption == "N":
         print("Progress not saved.")
@@ -66,6 +67,7 @@ while True:
         print("Invalid selection.")
 
 visualize = input("Do you want to see your progress? [Y / N] ")
+
 
     
 
