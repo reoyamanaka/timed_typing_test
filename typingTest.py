@@ -35,10 +35,11 @@ for word in inputWords:
 score = rawscore / len(correctWords)*100
 print("\nYour accuracy score is " + '%.2f' % score + " %.")
 wordsPerMin = rawscore/elapsed*60
-print("Your typing speed is " + '%0.2f' % wordsPerMin + " words per minute.")
+print("Your raw typing speed is " + '%0.2f' % wordsPerMin + " words per minute.")
 if score < 100:
     print("Typo(s):")
     print(typos)
+print("Your typos-adjusted typing speed is " + "%0.2f" % (wordsPerMin - len(typos)) + " words per minute.")
 
 saveOption = input("Do you want to save your score? [Y / N]: ")
 if saveOption == "y" or saveOption == "Y":
