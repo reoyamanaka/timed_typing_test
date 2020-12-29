@@ -1,4 +1,4 @@
-import time, random
+import time, random, csv, datetime
 
 excerpt = random.randint(0, 2)
 
@@ -29,14 +29,36 @@ for word in inputWords:
     if word in correctWords:
         rawscore += 1
     else:
-        typos.append(word)
+        if len(word) > 0:
+            typos.append(word)
 
 score = rawscore / len(correctWords)*100
 print("\nYour accuracy score is " + '%.2f' % score + " %.")
-wordsPerMin = len(inputWords)/elapsed*60
+wordsPerMin = rawscore/elapsed*60
 print("Your typing speed is " + '%0.2f' % wordsPerMin + " words per minute.")
 if score < 100:
     print("Typo(s):")
     print(typos)
+
+saveOption = input("Do you want to save your score? [Y / N]: ")
+if saveOption == "y" or saveOption == "Y":
+    currentDate = datetime.date.today()
+    currentDate = currentDate.strftime("%d-%m-%Y")
+
+    with open("progress.csv", "r") as f:
+        reader = csv.reader(f)
+        progress = {}
+        for row in reader:
+            progress[row[0]] = {"raw_wpm":row[1], "accuracy":row[2], "wpm":row[3]}
+    print(progress)
+    progress[currentDate] = {"raw_wpm":'%0.2f' % wordsPerMin, "accuracy":'%0.2f' % score, "wpm":'%0.2f' % (wordsPerMin - len(typos))}
+    
+
+#visualize = input("Do you want to see your progress? [Y / N] ")
+
+    
+
+
+
 
 
