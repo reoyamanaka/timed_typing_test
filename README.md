@@ -20,7 +20,7 @@
     <a href="https://github.com/reoyamanaka/timed_typing_test.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://youtu.be/4vwbIp-kAJQ">View Demo</a>
+    <a href="https://youtu.be/7h0hKpCxUL8">View Demo</a>
     .
     <a href="https://github.com/reoyamanaka/timed_typing_test/issues">Report Bug</a>
   </p>
@@ -53,6 +53,7 @@
 <p align="center">
   <strong>Results</strong>
   <img src="images/2.png">
+  <img src="images/3.png">
 </p>
 
 ### Built With
@@ -67,7 +68,10 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisite
 
-* <a href="https://www.python.org/downloads/">Python 3</a>
+* matplotlib
+```sh
+pip install matplotlib
+```
 
 ### Installation
 
@@ -75,15 +79,19 @@ To get a local copy up and running follow these simple steps.
 ```sh
 git clone https://github.com/reoyamanaka/timed_typing_test.git
 ```
-2. Launch typingTest.py
+2. Install matplotlib module
+```sh
+pip install matplotlib
+```
+3. Launch typingTest.py
 
 
 ## Usage
 
 <div align="center">
   <strong>YouTube Demo</strong><br>
-  <a href="https://youtu.be/4vwbIp-kAJQ">
-    <img src="http://i3.ytimg.com/vi/4vwbIp-kAJQ/hqdefault.jpg" alt="Thumbnail" width="560" height="315">
+  <a href="https://youtu.be/7h0hKpCxUL8">
+    <img src="http://i3.ytimg.com/vi/7h0hKpCxUL8/hqdefault.jpg" alt="Thumbnail" width="560" height="315">
   </a>
 </div>
 

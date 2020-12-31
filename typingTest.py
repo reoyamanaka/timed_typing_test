@@ -86,10 +86,10 @@ while True:
         plt.show()
         break
     elif visualize == "N" or visualize == "n":
-        print("Progress not saved.")
         break
     else:
         print("Invalid selection.")
+print("Typing test completed.")
 
 
         
