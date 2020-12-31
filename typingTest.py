@@ -81,7 +81,9 @@ while True:
                 wpm_list.append(float(line.split(",")[3]))
         
         plt.plot_date(dateList, wpm_list, linestyle ='solid')
-        plt.tight_layout()
+        plt.title('Adjusted Words Per Min (WPM) Progress')
+        plt.xlabel('Date')
+        plt.ylabel('Adjusted WPM')
         plt.show()
         break
     elif visualize == "N" or visualize == "n":
