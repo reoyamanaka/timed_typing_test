@@ -1,9 +1,9 @@
-import time, random, csv
+import time, random, csv, datetime
 import pandas as pd
 import matplotlib.pyplot as plt            
 from matplotlib import dates
 from pandas.plotting import register_matplotlib_converters
-from datetime import datetime, timedelta
+from datetime import timedelta
 plt.style.use('seaborn')
 
 excerpt = random.randint(0, 2)
@@ -52,7 +52,7 @@ while True:
     saveOption = input("Do you want to save your score? [Y / N]: ")
     if saveOption == "y" or saveOption == "Y":
         currentDate = datetime.date.today()
-        currentDate = currentDate.strftime("%d-%m-%Y")
+        currentDate = currentDate.strftime("%Y-%m-%d")
 
         with open("progress.csv", "r") as f:
             reader = csv.reader(f)
@@ -87,6 +87,12 @@ while True:
         plt.tight_layout()
         plt.show()
         break
+    elif visualize == "N" or visualize == "n":
+        print("Progress not saved.")
+        break
+    else:
+        print("Invalid selection.")
+
 
         
 
