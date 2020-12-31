@@ -1,7 +1,6 @@
 import time, random, csv, datetime
 import matplotlib.pyplot as plt            
 from matplotlib import dates
-from datetime import timedelta
 plt.style.use('seaborn')
 
 excerpt = random.randint(0, 2)
