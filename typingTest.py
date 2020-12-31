@@ -1,8 +1,6 @@
 import time, random, csv, datetime
-import pandas as pd
 import matplotlib.pyplot as plt            
 from matplotlib import dates
-from pandas.plotting import register_matplotlib_converters
 from datetime import timedelta
 plt.style.use('seaborn')
 
@@ -82,7 +80,6 @@ while True:
                 dateList.append(line.split(",")[0])
                 wpm_list.append(float(line.split(",")[3]))
         
-        register_matplotlib_converters()
         plt.plot_date(dateList, wpm_list, linestyle ='solid')
         plt.tight_layout()
         plt.show()
