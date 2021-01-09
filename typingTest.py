@@ -34,13 +34,18 @@ for word in inputWords:
     else:
         if len(word) > 0:
             typos.append(word)
+            
+for word in correctWords:
+    if word not in inputWords:
+        typos.append(word)
+
 
 score = rawscore / len(correctWords)*100
 print("\nYour accuracy score is " + '%.2f' % score + " %.")
 wordsPerMin = rawscore/elapsed*60
 print("Your raw typing speed is " + '%0.2f' % wordsPerMin + " words per minute.")
 if score < 100:
-    print("Typo(s):")
+    print("Typo(s) / Missed word(s):")
     print(typos)
 print("Your typos-adjusted typing speed is " + "%0.2f" % (wordsPerMin - len(typos)) + " words per minute.")
 
