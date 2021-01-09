@@ -47,7 +47,12 @@ print("Your raw typing speed is " + '%0.2f' % wordsPerMin + " words per minute."
 if score < 100:
     print("Typo(s) / Missed word(s):")
     print(typos)
-print("Your typos-adjusted typing speed is " + "%0.2f" % (wordsPerMin - len(typos)) + " words per minute.")
+
+adjustedScore = (wordsPerMin - len(typos))
+if adjustedScore < 0:
+    adjustedScore = 0
+    
+print("Your typos-adjusted typing speed is " + "%0.2f" % adjustedScore + " words per minute.")
 
 
 while True:
