@@ -26,6 +26,7 @@ elapsed = end-start
 correctWords = words.split(" ")
 inputWords = inputExcerpt.split(" ")
 typos = []
+missed = []
 rawscore = 0
 
 for word in inputWords:
@@ -37,8 +38,9 @@ for word in inputWords:
             
 for word in correctWords:
     if word not in inputWords:
-        typos.append(word)
+        missed.append(word)
 
+typosAndMissed = typos + missed
 
 score = rawscore / len(correctWords)*100
 print("\nYour accuracy score is " + '%.2f' % score + " %.")
@@ -46,14 +48,11 @@ wordsPerMin = rawscore/elapsed*60
 print("Your raw typing speed is " + '%0.2f' % wordsPerMin + " words per minute.")
 if score < 100:
     print("Typo(s) / Missed word(s):")
-    print(typos)
+    print(typosAndMissed)
 
-adjustedScore = (wordsPerMin - len(typos))
-if adjustedScore < 0:
-    adjustedScore = 0
+adjustedScore = 0 if (wordsPerMin - len(typos)) < 0 else (wordsPerMin - len(typos))
     
 print("Your typos-adjusted typing speed is " + "%0.2f" % adjustedScore + " words per minute.")
-
 
 while True:
     saveOption = input("Do you want to save your score? [Y / N]: ")
