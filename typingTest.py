@@ -91,7 +91,7 @@ while True:
         plt.plot_date(dateList, wpm_list, linestyle ='solid')
         plt.title('Adjusted Words Per Min (WPM) Progress')
         plt.xlabel('Date')
-        plt.ylabel('Adjusted WPM')
+        plt.ylabel('Typo(s)-Adjusted WPM')
         plt.gcf().subplots_adjust(bottom=0.20)
         plt.show()
         break
