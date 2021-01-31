@@ -54,6 +54,7 @@
   <strong>Results</strong>
   <img src="images/2.png">
   <img src="images/3.png">
+  <img src="images/progress.png">
 </p>
 
 ### Built With

@@ -1,8 +1,26 @@
 import time, random, csv, datetime
 import matplotlib.pyplot as plt            
 from matplotlib import dates
-plt.style.use('seaborn')
 
+def createWpmGraph(action):
+    dateList = []
+    wpm_list = []
+    with open("progress.csv", "r") as f:
+        for line in f:
+            dateList.append(line.split(",")[0])
+            wpm_list.append(float(line.split(",")[3]))
+    plt.style.use('seaborn')
+    plt.xticks(rotation=70)
+    plt.plot_date(dateList, wpm_list, linestyle ='solid')
+    plt.title('Adjusted Words Per Min (WPM) Progress')
+    plt.xlabel('Date')
+    plt.ylabel('Typo(s)-Adjusted WPM')
+    plt.gcf().subplots_adjust(bottom=0.20)
+    if action == "save":
+        plt.savefig('images/progress.png')
+    elif action == 'show':
+        plt.show()
+        
 excerpt = random.randint(0, 2)
 
 if excerpt == 0:
@@ -70,6 +88,7 @@ while True:
         with open("progress.csv", "w") as f:
             for key in progress.keys():
                 f.write("{},{},{},{}\n".format(key, progress[key]["raw_wpm"], progress[key]["accuracy"], progress[key]["wpm"]))
+        createWpmGraph('save')
         print("Progress saved.")
         break
     elif saveOption == "n" or saveOption == "N":
@@ -81,19 +100,7 @@ while True:
 while True:
     visualize = input("Do you want to see your progress? [Y / N] ")
     if visualize == "Y" or visualize == "y":
-        dateList = []
-        wpm_list = []
-        with open("progress.csv", "r") as f:
-            for line in f:
-                dateList.append(line.split(",")[0])
-                wpm_list.append(float(line.split(",")[3]))
-        plt.xticks(rotation=70)
-        plt.plot_date(dateList, wpm_list, linestyle ='solid')
-        plt.title('Adjusted Words Per Min (WPM) Progress')
-        plt.xlabel('Date')
-        plt.ylabel('Typo(s)-Adjusted WPM')
-        plt.gcf().subplots_adjust(bottom=0.20)
-        plt.show()
+        createWpmGraph('show')
         break
     elif visualize == "N" or visualize == "n":
         break
