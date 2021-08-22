@@ -31,7 +31,7 @@
 * [About the Project](#about-the-project)
   * [Built with](#built-with)
 * [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
+  * [Prerequisite](#prerequisite)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -71,7 +71,7 @@ To get a local copy up and running follow these simple steps.
 
 * matplotlib
 ```sh
-pip install matplotlib
+pip3 install matplotlib
 ```
 
 ### Installation
@@ -80,11 +80,14 @@ pip install matplotlib
 ```sh
 git clone https://github.com/reoyamanaka/timed_typing_test.git
 ```
-2. Install matplotlib module
+2. Install requirements
 ```sh
-pip install matplotlib
+pip3 install -r requirements.txt
 ```
 3. Launch typingTest.py
+```
+python3 typingTest.py
+```
 
 
 ## Usage
